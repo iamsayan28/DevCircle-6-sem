@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const BASE_URL = import.meta.env.PROD 
-  ? 'https://devcircle-pzv9.onrender.com/api' 
-  : 'http://localhost:5000/api';
+  ? 'https://devcircle-pzv9.onrender.com' 
+  : 'http://localhost:5000';
 
 // Create axios instance with default config
 const axiosInstance = axios.create({
@@ -14,6 +14,10 @@ const axiosInstance = axios.create({
 
 // Add token to requests if available
 axiosInstance.interceptors.request.use((config) => {
+  // Ensure /api is included before the rest of the url
+  if (!config.url.startsWith('/api')) {
+    config.url = '/api' + config.url;
+  }
   const token = localStorage.getItem('token');
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
