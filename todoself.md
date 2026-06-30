@@ -11,4 +11,5 @@
 - @remove filter button from homepage
 - @make following filter work on homepage 
 - @fix pagenumbers
-- @fix bounty winner logic- only one bounty winner(done)
+- @fix bounty winner logic- only one bounty winner(done)The platform introduces a competitive and gamified edge by ranking both Top Projects and Top Developers based on engagement. This encourages active participation, high-quality code sharing, and community help, turning the social experience into a merit-based ecosystem.
+
